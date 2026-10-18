@@ -1,0 +1,44 @@
+flowchart TB
+    %% Pacho System Architecture Flowchart
+    classDef client fill:#161b22,stroke:#00DF89,stroke-width:2px,color:#fff
+    classDef edge fill:#161b22,stroke:#3aa9d6,stroke-width:1.5px,color:#fff
+    classDef backend fill:#161b22,stroke:#3ECF8E,stroke-width:2px,color:#fff
+    classDef sublayer fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#c9d1d9
+
+    subgraph Client["📱 Progressive Web App (React 19 + Vite)"]
+        direction TB
+        AppLayer["App Layer: Providers, Router & index.css [SEC-XX]"]:::sublayer
+        PagesLayer["Pages Layer: Dashboard, Transactions, Goals, Analytics, Settings"]:::sublayer
+        WidgetsLayer["Widgets & Features: BottomNav, PachoCompanion, Dual Sync Engine"]:::sublayer
+        EntitiesLayer["Entities & Shared: UI Tokens, Framer Motion Glass, 6 Locales"]:::sublayer
+        PWALayer["PWA Engine: Service Worker, Cache API & Manifest"]:::sublayer
+
+        AppLayer --> PagesLayer
+        PagesLayer --> WidgetsLayer
+        WidgetsLayer --> EntitiesLayer
+        EntitiesLayer -.-> PWALayer
+    end
+
+    subgraph Infra["🌐 Edge & Delivery"]
+        VercelCDN["Vercel Global Edge Network\nCI/CD, CDN, Brotli & SSL"]:::edge
+    end
+
+    subgraph Backend["⚡ Supabase Backend (PostgreSQL 15)"]
+        direction TB
+        RLS["Row Level Security (RLS)\nPrivate vs Couple Scope Isolation"]:::sublayer
+        Realtime["Realtime Engine (WebSockets)\nInstant Partner Balances Sync"]:::sublayer
+        RelationalDB["Relational Schema\nProfiles, Accounts, Transactions, Budgets"]:::sublayer
+        Auth["Supabase Auth (JWT & Session Token)"]:::sublayer
+
+        Auth --> RLS
+        RLS --> RelationalDB
+        RelationalDB -.-> Realtime
+    end
+
+    Client -- "1. SPA Asset Delivery & Previews" --> Infra
+    Client -- "2. HTTPS REST / RPC with JWT" --> RLS
+    Realtime -- "3. WSS Live State Push (<100ms)" --> Client
+
+    class Client client
+    class Infra edge
+    class Backend backend
