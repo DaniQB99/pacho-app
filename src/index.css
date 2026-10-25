@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #080b0a;
+  --bg-surface: #111614;
+  --bg-card: #161c1a;
+  --border-color: #232d29;
+  --text-primary: #f3f6f4;
+  --text-secondary: #9ca3af;
+  --color-green: #00DF89;
+  --color-gold: #d4af37;
+}
+
+html.light {
+  --bg-primary: #f8faf9;
+  --bg-surface: #ffffff;
+  --bg-card: #f0f4f2;
+  --border-color: #e2e8e5;
+  --text-primary: #0d1210;
+  --text-secondary: #4b5563;
+  --color-green: #059669;
+  --color-gold: #b45309;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism */
+.liquid-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html.light .liquid-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(240, 245, 242, 0.65) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.pacho-card {
+  background: linear-gradient(180deg, #151b19 0%, #101513 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.light .pacho-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.pacho-card:hover {
+  border-color: rgba(0, 223, 137, 0.4);
+  box-shadow: 0 14px 40px -10px rgba(0, 223, 137, 0.15);
+  transform: translateY(-2px);
+}

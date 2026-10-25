@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "features": "Features",
+    "useCases": "Who is it for?",
+    "emulator": "Try Live Demo",
+    "pachoGuide": "Meet Pacho",
+    "architecture": "For Devs",
+    "openApp": "Open Pacho App",
+    "themeLight": "Light mode",
+    "themeDark": "Dark mode",
+    "langEs": "Español",
+    "langEn": "English"
+  },
+  "hero": {
+    "badge": "✨ Shared & personal finances with soul",
+    "titleLine1": "Clear accounts,",
+    "titleLine2": "zero drama.",
+    "subtitle": "The freshest and most visual way to manage shared and personal expenses. No receipts arguments, no annoying spreadsheets.",
+    "ctaPrimary": "Try on mobile",
+    "ctaSecondary": "Explore simulator",
+    "stat1Value": "10 sec",
+    "stat1Label": "to log and balance",
+    "stat2Value": "100%",
+    "stat2Label": "privacy and no banks",
+    "stat3Value": "0 €",
+    "stat3Label": "free to get started"
+  },
+  "audience": {
+    "badge": "Total Versatility",
+    "title": "Built for your daily life, whoever you share with",
+    "subtitle": "Not just for couples. Pacho adapts to real everyday life with independent pouches for each group.",
+    "cases": {
+      "couples": {
+        "title": "Couples",
+        "desc": "Peaceful living: rent, groceries, dinners, and shared savings goals without mixing personal money.",
+        "tag": "The classic that saves relationships"
+      },
+      "roommates": {
+        "title": "Flatmates",
+        "desc": "Utilities, internet, supplies, and cleaning. Everything tracked and settled month by month in one tap.",
+        "tag": "Zero notes on the fridge"
+      },
+      "friends": {
+        "title": "Friend Groups",
+        "desc": "Barbecues, festivals, weekend getaways, and birthday gifts without the WhatsApp group chaos.",
+        "tag": "Everyone pays their fair share"
+      },
+      "siblings": {
+        "title": "Siblings",
+        "desc": "Mom's anniversary gift, the family dog vet bill, or shared subscriptions.",
+        "tag": "Transparent family finances"
+      },
+      "family": {
+        "title": "Parents & Teens",
+        "desc": "Practical financial education: assign school expenses or allowances with visual pouches.",
+        "tag": "Real-world financial learning"
+      }
+    }
+  },
+  "emulator": {
+    "badge": "Interactive Emulator",
+    "title": "Try it right now",
+    "subtitle": "Interact with this live clone of the app. Add expenses, switch pouches, and inspect balances. No sign-up required, 100% in your browser.",
+    "screenBalance": "Pouch Balance",
+    "screenShared": "Shared Expenses",
+    "screenPersonal": "Personal (Private)",
+    "screenGoal": "Savings Goal",
+    "recentMovements": "Recent transactions",
+    "addExpenseBtn": "Add quick expense",
+    "modalTitle": "New shared expense",
+    "fieldConcept": "Description",
+    "fieldAmount": "Amount (€)",
+    "fieldSplit": "Split",
+    "btnSave": "Add to pouch",
+    "btnCancel": "Cancel",
+    "quickSuccess": "Expense added to memory pouch!",
+    "debtNotice": "owes",
+    "settleBizum": "Settle with Bizum",
+    "resetWarning": "💡 Changes run in browser memory and reset when refreshing the page."
+  },
+  "pachoGuide": {
+    "badge": "Your Financial Companion",
+    "title": "Meet Pacho, your money guide",
+    "subtitle": "An endearing guide with a beret and pouch who turns cold numbers into peace of mind and healthy habits.",
+    "quote": "«Clear accounts and thick chocolate. Keep your finances split with zero hassle.»",
+    "pillar1Title": "Clear Pouches",
+    "pillar1Desc": "Separate personal money from shared funds. Nobody sees what you spend on your personal hobbies.",
+    "pillar2Title": "Liquid Glass & Micro-interactions",
+    "pillar2Desc": "A dark, smooth, tactile interface that is a joy to open every single day.",
+    "pillar3Title": "Pacho Keeps You Alert",
+    "pillar3Desc": "Helpful, friendly reminders when it's time to settle balances or celebrate reaching a savings milestone."
+  },
+  "techPortal": {
+    "badge": "For Developers & Recruiters",
+    "title": "Engineering Behind Pacho",
+    "subtitle": "Engineered under high architectural standards with modern performance and clean design.",
+    "toggleOpen": "View engineering & architecture specs",
+    "toggleClose": "Hide technical specs",
+    "card1Title": "React 19 & FSD Architecture",
+    "card1Desc": "Feature-Sliced Design with strict layers (app, pages, widgets, features, entities, shared) for high modularity and clean separation.",
+    "card2Title": "Vite & Extreme Performance",
+    "card2Desc": "Sub-second load times, lightweight CSS variables with no runtime overhead, and 60fps animations with Framer Motion.",
+    "card3Title": "Supabase Realtime & PostgreSQL",
+    "card3Desc": "Instant multi-device synchronization backed by strict Row Level Security (RLS) for complete user privacy.",
+    "card4Title": "Cross-Platform Flutter Mobile",
+    "card4Desc": "Native mobile core in Flutter (`mobile/`) sharing identical pouch philosophy and visual language.",
+    "btnGithub": "View code on GitHub"
+  },
+  "pricing": {
+    "badge": "Flexible Plans",
+    "title": "Start free, scale whenever you need",
+    "subtitle": "All essentials always free. Advanced features for those who want granular control.",
+    "freeTier": "Pacho Basic",
+    "freePrice": "0 €",
+    "freePeriod": "forever",
+    "freeFeatures": ["Unlimited shared pouches", "Instant who-owes-who calculation", "Expense timeline", "Installable offline PWA"],
+    "proTier": "Pacho Pro",
+    "proPrice": "€2.99",
+    "proPeriod": "per month",
+    "proFeatures": ["Everything in Basic", "Smart budgets & proactive alerts", "Excel / CSV export", "Priority support & custom themes"],
+    "comingSoon": "Available soon"
+  },
+  "footer": {
+    "tagline": "Shared and personal finances with zero headaches.",
+    "madeWith": "Crafted with care, clean code, and Spanish soul.",
+    "rights": "All rights reserved.",
+    "disclaimer": "Pacho is not a bank and does not store banking credentials. Your money and accounts always stay under your control."
+  }
+}

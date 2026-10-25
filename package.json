@@ -1,0 +1,35 @@
+{
+  "name": "pacho-showcase",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "audit": "npm run i18n:check && tsc -b && vite build",
+    "i18n:check": "node scripts/check-i18n.mjs",
+    "memory:search": "engram search",
+    "memory:context": "engram context pacho-app",
+    "memory:stats": "engram stats --project pacho-app",
+    "memory:tui": "engram tui"
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.6.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.1"
+  }
+}

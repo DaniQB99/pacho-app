@@ -1,0 +1,142 @@
+{
+  "currentUser": {
+    "id": "u-1",
+    "name": "Dani",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Dani",
+    "monthlyBudget": 1800
+  },
+  "partner": {
+    "id": "u-2",
+    "name": "Elena",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Elena"
+  },
+  "zurrones": [
+    {
+      "id": "z-shared",
+      "name": "Piso & Gastos Comunes",
+      "type": "shared",
+      "balance": 1840.50,
+      "myShare": 920.25,
+      "partnerShare": 920.25,
+      "currency": "€",
+      "color": "emerald",
+      "membersCount": 2
+    },
+    {
+      "id": "z-personal",
+      "name": "Mi Zurrón Personal",
+      "type": "personal",
+      "balance": 2450.00,
+      "myShare": 2450.00,
+      "partnerShare": 0,
+      "currency": "€",
+      "color": "blue",
+      "membersCount": 1
+    },
+    {
+      "id": "z-trips",
+      "name": "Viaje a Asturias 🌲",
+      "type": "goal",
+      "balance": 620.00,
+      "target": 1000.00,
+      "myShare": 310.00,
+      "partnerShare": 310.00,
+      "currency": "€",
+      "color": "gold",
+      "membersCount": 2
+    }
+  ],
+  "debtSummary": {
+    "debtor": "Elena",
+    "creditor": "Dani",
+    "amount": 42.80,
+    "currency": "€",
+    "reason": "Compra Mercadona (Dani pagó 85.60 € a pachas 50/50)"
+  },
+  "categories": [
+    { "id": "cat-super", "name": "Supermercado", "icon": "ShoppingCart", "color": "#10b981" },
+    { "id": "cat-home", "name": "Alquiler y Piso", "icon": "Home", "color": "#3b82f6" },
+    { "id": "cat-dine", "name": "Cenas y Ocio", "icon": "Utensils", "color": "#f59e0b" },
+    { "id": "cat-bills", "name": "Luz, Internet y Agua", "icon": "Zap", "color": "#8b5cf6" },
+    { "id": "cat-trips", "name": "Transporte y Viajes", "icon": "Car", "color": "#ec4899" }
+  ],
+  "transactions": [
+    {
+      "id": "tx-1",
+      "zurronId": "z-shared",
+      "title": "Mercadona Semanal",
+      "category": "cat-super",
+      "amount": 85.60,
+      "paidBy": "Dani",
+      "split": "50/50",
+      "myPart": 42.80,
+      "date": "Hoy, 14:30",
+      "type": "expense"
+    },
+    {
+      "id": "tx-2",
+      "zurronId": "z-shared",
+      "title": "Fibra & WiFi 600Mb",
+      "category": "cat-bills",
+      "amount": 34.90,
+      "paidBy": "Elena",
+      "split": "50/50",
+      "myPart": 17.45,
+      "date": "Ayer",
+      "type": "expense"
+    },
+    {
+      "id": "tx-3",
+      "zurronId": "z-shared",
+      "title": "Cena Italiana Romántica",
+      "category": "cat-dine",
+      "amount": 48.00,
+      "paidBy": "Dani",
+      "split": "50/50",
+      "myPart": 24.00,
+      "date": "Viernes",
+      "type": "expense"
+    },
+    {
+      "id": "tx-4",
+      "zurronId": "z-personal",
+      "title": "Abono Gimnasio",
+      "category": "cat-bills",
+      "amount": 29.99,
+      "paidBy": "Dani",
+      "split": "100% Personal",
+      "myPart": 29.99,
+      "date": "22 Oct",
+      "type": "expense"
+    },
+    {
+      "id": "tx-5",
+      "zurronId": "z-trips",
+      "title": "Aporte Meta Asturias",
+      "category": "cat-trips",
+      "amount": 100.00,
+      "paidBy": "Dani",
+      "split": "Ahorro conjunto",
+      "myPart": 50.00,
+      "date": "20 Oct",
+      "type": "income"
+    }
+  ],
+  "pachoTips": [
+    {
+      "id": "tip-1",
+      "pose": "guia",
+      "quote": "¡Bien llevado! En el zurrón compartido van 85,60 € de súper repartidos a la mitad sin discusión."
+    },
+    {
+      "id": "tip-2",
+      "pose": "celebracion",
+      "quote": "¡Elena te debe 42,80 €! Con un toque en Pacho te salda la cuenta al instante con Bizum."
+    },
+    {
+      "id": "tip-3",
+      "pose": "ahorro",
+      "quote": "¡Ojo al dato! Ya lleváis el 62% del viaje a Asturias ahorrado en el zurrón de metas."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "features": "Funciones",
+    "useCases": "¿Para quién?",
+    "emulator": "Pruébala en vivo",
+    "pachoGuide": "Conoce a Pacho",
+    "architecture": "Para Devs",
+    "openApp": "Abrir Pacho App",
+    "themeLight": "Modo claro",
+    "themeDark": "Modo oscuro",
+    "langEs": "Español",
+    "langEn": "English"
+  },
+  "hero": {
+    "badge": "✨ La app de finanzas a pachas con alma",
+    "titleLine1": "Cuentas claras,",
+    "titleLine2": "cero rollos.",
+    "subtitle": "La forma más fresca y visual de llevar gastos compartidos y personales. Sin peleas por el ticket, sin hojas de cálculo infumables.",
+    "ctaPrimary": "Probar en el móvil",
+    "ctaSecondary": "Explorar simulador",
+    "stat1Value": "10 seg",
+    "stat1Label": "en registrar y cuadrar",
+    "stat2Value": "100%",
+    "stat2Label": "privacidad y sin bancos",
+    "stat3Value": "0 €",
+    "stat3Label": "gratis para empezar"
+  },
+  "audience": {
+    "badge": "Versatilidad total",
+    "title": "Diseñada para tu día a día, compartas con quien compartas",
+    "subtitle": "No es solo para parejas. Pacho se adapta a tu vida real con zurrones independientes para cada grupo.",
+    "cases": {
+      "couples": {
+        "title": "Parejas",
+        "desc": "Convivencia en paz: alquiler, compras, cenas y metas de ahorro compartidas sin mezclar lo personal.",
+        "tag": "El clásico que salva relaciones"
+      },
+      "roommates": {
+        "title": "Compañeros de piso",
+        "desc": "Luz, internet, papel higiénico y limpieza. Todo registrado y saldado mes a mes con un toque.",
+        "tag": "Cero notas en la nevera"
+      },
+      "friends": {
+        "title": "Grupos de amigos",
+        "desc": "Barbacoas, festivales, viajes de fin de semana y regalos de cumple sin el caos de los grupos de WhatsApp.",
+        "tag": "Cada uno lo que le toca"
+      },
+      "siblings": {
+        "title": "Hermanos",
+        "desc": "El regalo de bodas de mamá, el veterinario del perro familiar o la suscripción compartida.",
+        "tag": "Cuentas transparentes en familia"
+      },
+      "family": {
+        "title": "Padres con hijos",
+        "desc": "Enseña educación financiera práctica asignando gastos escolares o pagas con zurrones visuales.",
+        "tag": "Educación financiera real"
+      }
+    }
+  },
+  "emulator": {
+    "badge": "Emulador Interactivo",
+    "title": "Pruébala tú mismo ahora mismo",
+    "subtitle": "Interactúa con este clon en vivo de la app. Agrega gastos, cambia de zurrón y mira los saldos. Cero registro, 100% en tu navegador.",
+    "screenBalance": "Saldo en Zurrón",
+    "screenShared": "Pachas Compartidas",
+    "screenPersonal": "Solo Dani (Privado)",
+    "screenGoal": "Ahorro Meta",
+    "recentMovements": "Últimos movimientos",
+    "addExpenseBtn": "Añadir gasto rápido",
+    "modalTitle": "Nuevo gasto a medias",
+    "fieldConcept": "Concepto",
+    "fieldAmount": "Importe (€)",
+    "fieldSplit": "Reparto",
+    "btnSave": "Registrar en el zurrón",
+    "btnCancel": "Cancelar",
+    "quickSuccess": "¡Gasto añadido al zurrón en memoria!",
+    "debtNotice": "debe a",
+    "settleBizum": "Saldar con Bizum",
+    "resetWarning": "💡 Los cambios son en memoria y se reinician al recargar la página."
+  },
+  "pachoGuide": {
+    "badge": "Tu compañero de viaje",
+    "title": "Conoce a Pacho, tu guía financiero",
+    "subtitle": "Un personaje entrañable con boina y zurrón que traduce números fríos en tranquilidad y buenos hábitos.",
+    "quote": "«Las cuentas claras y el chocolate espeso. Lleva tus finanzas a pachas sin líos.»",
+    "pillar1Title": "Zurrones Claros",
+    "pillar1Desc": "Separa tu dinero personal de lo compartido. Nadie ve en qué te gastas tus caprichos personales.",
+    "pillar2Title": "Liquid Glass & Micro-interacciones",
+    "pillar2Desc": "Una interfaz oscura, placentera y ágil que da gusto abrir cada día.",
+    "pillar3Title": "Pacho te avisa",
+    "pillar3Desc": "Mensajes didácticos y con humor cuando toca saldar deudas o cuando alcanzáis una meta de ahorro."
+  },
+  "techPortal": {
+    "badge": "Para Desarrolladores y Reclutadores",
+    "title": "Ingeniería detrás de Pacho",
+    "subtitle": "Construida con los más altos estándares de arquitectura limpia y rendimiento de última generación.",
+    "toggleOpen": "Ver detalles de ingeniería y arquitectura",
+    "toggleClose": "Ocultar especificaciones técnicas",
+    "card1Title": "React 19 & FSD Architecture",
+    "card1Desc": "Feature-Sliced Design con capas estrictas (app, pages, widgets, features, entities, shared) para modularidad y desacoplamiento extremo.",
+    "card2Title": "Vite & Performance Extrema",
+    "card2Desc": "Tiempos de carga sub-segundo, CSS Variables sin sobrecarga de runtime y animaciones a 60fps con Framer Motion.",
+    "card3Title": "Supabase Realtime & PostgreSQL",
+    "card3Desc": "Sincronización instantánea entre dispositivos con Row Level Security (RLS) estricto para privacidad total de cada usuario.",
+    "card4Title": "Multiplataforma Flutter Mobile",
+    "card4Desc": "Núcleo móvil nativo en Flutter (`mobile/`) que comparte la misma filosofía de zurrones y diseño que la PWA.",
+    "btnGithub": "Ver código en GitHub"
+  },
+  "pricing": {
+    "badge": "Planes Flexibles",
+    "title": "Comienza gratis, escala cuando lo necesites",
+    "subtitle": "Todo lo esencial siempre gratis. Funciones avanzadas para quienes quieren control milimétrico.",
+    "freeTier": "Pacho Básico",
+    "freePrice": "0 €",
+    "freePeriod": "para siempre",
+    "freeFeatures": ["Zurrones compartidos ilimitados", "Cálculo instantáneo de quién debe a quién", "Historial de gastos", "PWA instalable offline"],
+    "proTier": "Pacho Pro",
+    "proPrice": "2,99 €",
+    "proPeriod": "al mes",
+    "proFeatures": ["Todo lo de Básico", "Presupuestos inteligentes y alertas automáticas", "Exportación a Excel / CSV", "Soporte prioritario y temas exclusivos"],
+    "comingSoon": "Próximamente disponible"
+  },
+  "footer": {
+    "tagline": "Finanzas compartidas y personales sin dolores de cabeza.",
+    "madeWith": "Hecho con dedicación, buen código y alma extremeña.",
+    "rights": "Todos los derechos reservados.",
+    "disclaimer": "Pacho no es un banco ni almacena credenciales bancarias. Tu dinero y tus cuentas permanecen siempre bajo tu control."
+  }
+}

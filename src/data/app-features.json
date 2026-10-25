@@ -1,0 +1,51 @@
+{
+  "syncedAt": "2026-10-25T17:20:20.961Z",
+  "appVersion": "0.9.5",
+  "mobile": {
+    "ready": true,
+    "version": "1.0.0+1"
+  },
+  "featuresCount": 8,
+  "recentFeatures": [
+    {
+      "id": "ftd-architecture-and-performance-optimizations",
+      "title": "Architecture And Performance Optimizations",
+      "docFile": "ftd-architecture-and-performance-optimizations.md"
+    },
+    {
+      "id": "ftd-full-screen-profile-and-streaks",
+      "title": "Full Screen Profile And Streaks",
+      "docFile": "ftd-full-screen-profile-and-streaks.md"
+    },
+    {
+      "id": "ftd-goals-intro-persistence-and-pacho-poses",
+      "title": "Goals Intro Persistence And Pacho Poses",
+      "docFile": "ftd-goals-intro-persistence-and-pacho-poses.md"
+    },
+    {
+      "id": "ftd-light-mode-readability-and-elevation",
+      "title": "Light Mode Readability And Elevation",
+      "docFile": "ftd-light-mode-readability-and-elevation.md"
+    },
+    {
+      "id": "ftd-recurring-subscriptions-management",
+      "title": "Recurring Subscriptions Management",
+      "docFile": "ftd-recurring-subscriptions-management.md"
+    },
+    {
+      "id": "ftd-recurring-transactions-engine",
+      "title": "Recurring Transactions Engine",
+      "docFile": "ftd-recurring-transactions-engine.md"
+    },
+    {
+      "id": "ftd-safe-to-spend-daily-engine",
+      "title": "Safe To Spend Daily Engine",
+      "docFile": "ftd-safe-to-spend-daily-engine.md"
+    },
+    {
+      "id": "ftd-secure-account-recovery-and-assistance",
+      "title": "Secure Account Recovery And Assistance",
+      "docFile": "ftd-secure-account-recovery-and-assistance.md"
+    }
+  ]
+}
