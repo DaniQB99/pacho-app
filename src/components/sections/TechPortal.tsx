@@ -102,7 +102,7 @@ export const TechPortal: React.FC = () => {
 
               <div className="w-full rounded-2xl overflow-hidden bg-slate-50 border border-black/5 dark:bg-black/40 dark:border-white/5 p-4 flex justify-center">
                 <img
-                  src="assets/diagrams/architecture-diagram.svg"
+                  src="/assets/diagrams/architecture-diagram.svg"
                   alt="Architecture Diagram"
                   className="w-full max-h-[380px] object-contain rounded-lg"
                 />

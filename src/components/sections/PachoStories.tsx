@@ -57,7 +57,7 @@ export const PachoStories: React.FC = () => {
           <div className="lg:col-span-5 flex flex-col items-center">
             <div className="relative group w-full max-w-md rounded-3xl overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl">
               <img
-                src="assets/pacho-banner.jpg"
+                src="/assets/pacho-banner.jpg"
                 alt="Pacho Guía"
                 className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
               />

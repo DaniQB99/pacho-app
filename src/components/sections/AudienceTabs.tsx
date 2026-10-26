@@ -226,14 +226,14 @@ export const AudienceTabs: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 flex items-center justify-between mt-1">
-                  <div>
-                    <p className="text-xs font-medium text-slate-800 dark:text-zinc-200">
+                <div className="p-3 rounded-xl bg-black/5 border border-black/10 dark:bg-white/5 dark:border-white/10 flex items-center justify-between gap-3 mt-1">
+                  <div className="min-w-0">
+                    <p className="text-xs font-medium text-slate-800 dark:text-zinc-200 truncate">
                       {activeOption.mockZurron.exampleExpense}
                     </p>
                     <p className="text-[10px] text-slate-500 dark:text-zinc-400">{t('audience.registeredExpense')}</p>
                   </div>
-                  <span className="text-sm font-black text-pacho-green">
+                  <span className="text-sm font-black text-pacho-green whitespace-nowrap shrink-0">
                     {activeOption.mockZurron.amount}
                   </span>
                 </div>
