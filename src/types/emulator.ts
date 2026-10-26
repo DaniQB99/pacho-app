@@ -1,29 +1,70 @@
-export type ZurronType = 'shared' | 'personal' | 'goal';
+export type AccountScope = 'shared' | 'personal';
 
-export interface Zurron {
+export type EmulatorTab = 'home' | 'transactions' | 'goals' | 'analytics' | 'settings';
+
+export interface Account {
   id: string;
   name: string;
-  type: ZurronType;
   balance: number;
-  myShare: number;
-  partnerShare: number;
   currency: string;
-  color: 'emerald' | 'blue' | 'gold';
-  membersCount: number;
-  target?: number;
+  color: string;
+  gradient: string;
+  icon: string;
+  scope: AccountScope;
+  position: number;
+  cardIdentifier: string;
 }
+
+export type TransactionType = 'expense' | 'income' | 'transfer';
 
 export interface Transaction {
   id: string;
-  zurronId: string;
+  accountId: string;
   title: string;
-  category: string;
   amount: number;
-  paidBy: string;
-  split: string;
-  myPart: number;
+  type: TransactionType;
+  category: string;
   date: string;
-  type: 'expense' | 'income';
+  dayGroup?: string;
+  paidBy: string;
+  scope: AccountScope;
+  isRecurring?: boolean;
+}
+
+export interface UpcomingPayment {
+  id: string;
+  accountId: string;
+  title: string;
+  amount: number;
+  dueDate: string;
+  periodicity: string;
+  icon: string;
+}
+
+export interface Goal {
+  id: string;
+  title: string;
+  currentAmount: number;
+  targetAmount: number;
+  startDate: string;
+  endDate: string;
+  tag: string;
+  scope: AccountScope;
+}
+
+export interface AnalyticsCategory {
+  name: string;
+  amount: number;
+  count: number;
+  color: string;
+}
+
+export interface AnalyticsData {
+  year: string;
+  netBalance: number;
+  totalIncome: number;
+  totalExpense: number;
+  categories: AnalyticsCategory[];
 }
 
 export interface Category {
@@ -33,35 +74,36 @@ export interface Category {
   color: string;
 }
 
-export interface DebtSummary {
-  debtor: string;
-  creditor: string;
-  amount: number;
-  currency: string;
-  reason: string;
+export interface SafeToSpend {
+  dailyAmount: number;
+  monthlyRemaining: number;
+  daysRemaining: number;
+  status: 'healthy' | 'caution' | 'critical';
+  subtitle: string;
+  badge: string;
 }
 
-export interface PachoTip {
-  id: string;
-  pose: string;
-  quote: string;
+export interface CoupleLink {
+  partnerName: string;
+  partnerAvatar: string;
+  syncCode: string;
+  linkedAt: string;
+  isLinked: boolean;
 }
 
 export interface MockDataState {
   currentUser: {
     id: string;
     name: string;
-    avatar: string;
-    monthlyBudget: number;
-  };
-  partner: {
-    id: string;
-    name: string;
+    email: string;
     avatar: string;
   };
-  zurrones: Zurron[];
-  debtSummary: DebtSummary;
+  couple: CoupleLink;
+  accounts: Account[];
+  safeToSpend: SafeToSpend;
   categories: Category[];
   transactions: Transaction[];
-  pachoTips: PachoTip[];
+  upcomingPayments: UpcomingPayment[];
+  goals: Goal[];
+  analytics: AnalyticsData;
 }

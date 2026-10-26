@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useI18n } from '../../context/I18nContext';
-import { Sparkles, ArrowRight, Smartphone, Eye, EyeOff, ShieldCheck, Zap } from 'lucide-react';
+import { Sparkles, ArrowRight, Smartphone, Eye, EyeOff, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const Hero: React.FC = () => {
@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-white dark:text-white light:text-zinc-900"
+              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-slate-900 dark:text-white"
             >
               {t('hero.titleLine1')}{' '}
               <span className="bg-gradient-to-r from-pacho-green via-pacho-greenBright to-emerald-400 bg-clip-text text-transparent">
@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-6 text-base sm:text-lg text-zinc-300 dark:text-zinc-300 light:text-zinc-600 max-w-xl leading-relaxed"
+              className="mt-6 text-base sm:text-lg text-slate-600 dark:text-zinc-300 max-w-xl leading-relaxed"
             >
               {t('hero.subtitle')}
             </motion.p>
@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
 
               <a
                 href="#emulador"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl border border-white/15 dark:border-white/15 light:border-black/15 bg-white/5 dark:bg-white/5 light:bg-black/5 hover:bg-white/10 text-white dark:text-white light:text-zinc-900 font-semibold text-sm sm:text-base transition-all"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl border border-black/15 bg-black/5 hover:bg-black/10 text-slate-900 dark:border-white/15 dark:bg-white/5 dark:hover:bg-white/10 dark:text-white font-semibold text-sm sm:text-base transition-all"
               >
                 <span>{t('hero.ctaSecondary')}</span>
                 <ArrowRight className="w-4 h-4 text-pacho-green" />
@@ -81,13 +81,13 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-12 grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t border-white/10 dark:border-white/10 light:border-black/10 w-full max-w-lg"
+              className="mt-12 grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t border-black/10 dark:border-white/10 w-full max-w-lg"
             >
               <div>
                 <div className="text-xl sm:text-2xl font-black text-pacho-green">
                   {t('hero.stat1Value')}
                 </div>
-                <div className="text-xs text-zinc-400 mt-0.5">
+                <div className="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">
                   {t('hero.stat1Label')}
                 </div>
               </div>
@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
                 <div className="text-xl sm:text-2xl font-black text-pacho-gold">
                   {t('hero.stat2Value')}
                 </div>
-                <div className="text-xs text-zinc-400 mt-0.5">
+                <div className="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">
                   {t('hero.stat2Label')}
                 </div>
               </div>
@@ -103,7 +103,7 @@ export const Hero: React.FC = () => {
                 <div className="text-xl sm:text-2xl font-black text-emerald-400">
                   {t('hero.stat3Value')}
                 </div>
-                <div className="text-xs text-zinc-400 mt-0.5">
+                <div className="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">
                   {t('hero.stat3Label')}
                 </div>
               </div>
@@ -119,21 +119,21 @@ export const Hero: React.FC = () => {
               className="w-full max-w-sm rounded-[32px] p-6 pacho-card liquid-glass relative shadow-2xl"
             >
               {/* Header card */}
-              <div className="flex items-center justify-between pb-4 border-b border-white/10 dark:border-white/10 light:border-black/10">
+              <div className="flex items-center justify-between pb-4 border-b border-black/10 dark:border-white/10">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center font-bold text-pacho-green text-sm">
                     P
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm text-white dark:text-white light:text-zinc-900">
+                    <h3 className="font-bold text-sm text-slate-900 dark:text-white">
                       Zurrón Pareja & Piso
                     </h3>
-                    <p className="text-[11px] text-zinc-400">Dani & Elena · 50/50</p>
+                    <p className="text-[11px] text-slate-500 dark:text-zinc-400">Pacho & Elena · 50/50</p>
                   </div>
                 </div>
                 <button
                   onClick={() => setShowBalance(!showBalance)}
-                  className="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
+                  className="p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-black/5 dark:text-zinc-400 dark:hover:text-white dark:hover:bg-white/10 transition-colors"
                   title="Toggle balance"
                 >
                   {showBalance ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -142,45 +142,44 @@ export const Hero: React.FC = () => {
 
               {/* Balance Big */}
               <div className="my-6">
-                <span className="text-xs uppercase font-mono tracking-wider text-zinc-400">
-                  Saldo Compartido
+                <span className="text-xs uppercase font-mono tracking-wider text-slate-500 dark:text-zinc-400">
+                  {t('hero.cardTitle')}
                 </span>
-                <div className="text-3xl sm:text-4xl font-extrabold text-white dark:text-white light:text-zinc-900 tracking-tight mt-1 flex items-baseline gap-2">
+                <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1 flex items-baseline gap-2">
                   <span>{showBalance ? '1.840,50 €' : '•••••• €'}</span>
-                  <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-400">
-                    +12% ahorro
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                    {t('hero.cardSavings')}
                   </span>
                 </div>
-                <p className="text-xs text-zinc-400 mt-1">
-                  Tu parte responsable:{' '}
-                  <span className="font-bold text-pacho-green">
-                    {showBalance ? '920,25 €' : '•••• €'}
+                <p className="text-xs text-slate-500 dark:text-zinc-400 mt-1">
+                  <span className="font-semibold text-pacho-green">
+                    {t('hero.cardDailySafe')}
                   </span>
                 </p>
               </div>
 
-              {/* Mini Who-owes-who prompt */}
-              <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-between">
+              {/* Movement item */}
+              <div className="p-3.5 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                    <Zap className="w-4 h-4 text-amber-400" />
+                  <div className="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+                    <CheckCircle2 className="w-4 h-4 text-pacho-green" />
                   </div>
                   <div className="text-left">
-                    <p className="text-xs font-bold text-white dark:text-white light:text-zinc-900">
-                      Elena te debe 42,80 €
+                    <p className="text-xs font-bold text-slate-900 dark:text-white">
+                      {t('hero.recentMovement')}
                     </p>
-                    <p className="text-[10px] text-zinc-400">Última compra Mercadona</p>
+                    <p className="text-[10px] text-slate-500 dark:text-zinc-400">{t('hero.recentMovementSubtitle')}</p>
                   </div>
                 </div>
-                <span className="text-xs font-bold text-pacho-green underline decoration-dashed cursor-pointer">
-                  Bizum
+                <span className="text-xs font-bold text-rose-500 dark:text-rose-400 font-mono">
+                  -42,80 €
                 </span>
               </div>
 
               {/* Privacy badge */}
-              <div className="mt-4 flex items-center gap-2 text-[11px] text-zinc-400 justify-center">
+              <div className="mt-4 flex items-center gap-2 text-[11px] text-slate-500 dark:text-zinc-400 justify-center">
                 <ShieldCheck className="w-3.5 h-3.5 text-pacho-green" />
-                <span>Tus finanzas personales siguen 100% privadas</span>
+                <span>{t('hero.privacyBadge')}</span>
               </div>
             </motion.div>
           </div>

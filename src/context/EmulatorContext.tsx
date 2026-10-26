@@ -1,13 +1,30 @@
 import React, { createContext, useContext, useState } from 'react';
 import initialMockData from '../data/mock-data.json';
-import { Zurron, Transaction, DebtSummary, MockDataState } from '../types/emulator';
+import { Account, Transaction, TransactionType, EmulatorTab, MockDataState } from '../types/emulator';
+
+interface AddTransactionParams {
+  title: string;
+  amount: number;
+  type: TransactionType;
+  accountId?: string;
+  categoryId: string;
+}
 
 interface EmulatorContextType {
   data: MockDataState;
-  activeZurron: Zurron;
-  setActiveZurronId: (id: string) => void;
-  addExpense: (title: string, amount: number, categoryId: string, splitType?: string) => void;
-  settleDebt: () => void;
+  activeAccount: Account;
+  activeAccountId: string;
+  activeAccountIndex: number;
+  activeTab: EmulatorTab;
+  setActiveTab: (tab: EmulatorTab) => void;
+  openSettings: () => void;
+  closeSettings: () => void;
+  setActiveAccountId: (id: string) => void;
+  selectNextAccount: () => void;
+  selectPrevAccount: () => void;
+  isBalanceHidden: boolean;
+  toggleBalanceVisibility: () => void;
+  addTransaction: (params: AddTransactionParams) => void;
   resetEmulator: () => void;
 }
 
@@ -15,106 +32,124 @@ const EmulatorContext = createContext<EmulatorContextType | undefined>(undefined
 
 export const EmulatorProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [data, setData] = useState<MockDataState>(() => JSON.parse(JSON.stringify(initialMockData)));
-  const [activeZurronId, setActiveZurronId] = useState<string>('z-shared');
+  const [activeAccountId, setActiveAccountId] = useState<string>('acc-principal');
+  const [isBalanceHidden, setIsBalanceHidden] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<EmulatorTab>('home');
+  const [previousTab, setPreviousTab] = useState<EmulatorTab>('home');
 
-  const activeZurron = data.zurrones.find(z => z.id === activeZurronId) || data.zurrones[0];
+  const activeAccountIndex = Math.max(
+    0,
+    data.accounts.findIndex(a => a.id === activeAccountId)
+  );
+  const activeAccount = data.accounts[activeAccountIndex] || data.accounts[0];
 
-  const addExpense = (title: string, amount: number, categoryId: string, splitType: string = '50/50') => {
-    const isShared = activeZurron.type === 'shared';
-    const myPart = isShared ? Number((amount / 2).toFixed(2)) : amount;
-    const partnerPart = isShared ? Number((amount - myPart).toFixed(2)) : 0;
+  const selectNextAccount = () => {
+    const nextIndex = (activeAccountIndex + 1) % data.accounts.length;
+    setActiveAccountId(data.accounts[nextIndex].id);
+  };
+
+  const selectPrevAccount = () => {
+    const prevIndex = (activeAccountIndex - 1 + data.accounts.length) % data.accounts.length;
+    setActiveAccountId(data.accounts[prevIndex].id);
+  };
+
+  const toggleBalanceVisibility = () => {
+    setIsBalanceHidden(prev => !prev);
+  };
+
+  const openSettings = () => {
+    if (activeTab !== 'settings') {
+      setPreviousTab(activeTab);
+    }
+    setActiveTab('settings');
+  };
+
+  const closeSettings = () => {
+    setActiveTab(previousTab || 'home');
+  };
+
+  const addTransaction = ({
+    title,
+    amount,
+    type,
+    accountId,
+    categoryId,
+  }: AddTransactionParams) => {
+    const targetAccountId = accountId || activeAccount.id;
+    const targetAcc = data.accounts.find(a => a.id === targetAccountId) || activeAccount;
+
+    const absAmount = Math.abs(amount);
+    const signedAmount = type === 'expense' ? -absAmount : absAmount;
 
     const newTx: Transaction = {
       id: `tx-${Date.now()}`,
-      zurronId: activeZurron.id,
+      accountId: targetAcc.id,
       title,
+      amount: signedAmount,
+      type,
       category: categoryId,
-      amount,
+      date: 'Hoy',
+      dayGroup: 'Hoy, 26 de octubre',
       paidBy: data.currentUser.name,
-      split: splitType,
-      myPart,
-      date: 'Ahora mismo',
-      type: 'expense',
+      scope: targetAcc.scope,
     };
 
     setData(prev => {
-      // Update Zurron balance
-      const updatedZurrones = prev.zurrones.map(z => {
-        if (z.id === activeZurron.id) {
+      const updatedAccounts = prev.accounts.map(acc => {
+        if (acc.id === targetAcc.id) {
+          const newBalance = Number((acc.balance + signedAmount).toFixed(2));
           return {
-            ...z,
-            balance: Number((z.balance + amount).toFixed(2)),
-            myShare: Number((z.myShare + myPart).toFixed(2)),
-            partnerShare: Number((z.partnerShare + partnerPart).toFixed(2)),
+            ...acc,
+            balance: newBalance,
           };
         }
-        return z;
+        return acc;
       });
 
-      // If shared expense paid by current user, partner owes their half!
-      let updatedDebt: DebtSummary = { ...prev.debtSummary };
-      if (isShared) {
-        const newDebtAmount = Number((prev.debtSummary.amount + partnerPart).toFixed(2));
-        updatedDebt = {
-          debtor: prev.partner.name,
-          creditor: prev.currentUser.name,
-          amount: newDebtAmount,
-          currency: '€',
-          reason: `Último gasto: ${title} (${amount} €)`,
+      let updatedSafeToSpend = { ...prev.safeToSpend };
+      if (type === 'expense') {
+        const newDaily = Math.max(0, Number((prev.safeToSpend.dailyAmount - absAmount).toFixed(2)));
+        updatedSafeToSpend = {
+          ...prev.safeToSpend,
+          dailyAmount: newDaily,
+          subtitle: `${newDaily.toFixed(2)} € disponibles sin estrés`,
         };
       }
 
       return {
         ...prev,
-        zurrones: updatedZurrones,
+        accounts: updatedAccounts,
+        safeToSpend: updatedSafeToSpend,
         transactions: [newTx, ...prev.transactions],
-        debtSummary: updatedDebt,
-      };
-    });
-  };
-
-  const settleDebt = () => {
-    setData(prev => {
-      const settlementTx: Transaction = {
-        id: `tx-settle-${Date.now()}`,
-        zurronId: activeZurron.id,
-        title: `Pago Bizum de ${prev.debtSummary.debtor}`,
-        category: 'cat-bills',
-        amount: prev.debtSummary.amount,
-        paidBy: prev.debtSummary.debtor,
-        split: 'Saldado 100%',
-        myPart: prev.debtSummary.amount,
-        date: 'Recién saldado ✨',
-        type: 'income',
-      };
-
-      return {
-        ...prev,
-        transactions: [settlementTx, ...prev.transactions],
-        debtSummary: {
-          debtor: prev.partner.name,
-          creditor: prev.currentUser.name,
-          amount: 0,
-          currency: '€',
-          reason: '¡Cuentas al día! 🤝 Sin deudas pendientes.',
-        },
       };
     });
   };
 
   const resetEmulator = () => {
     setData(JSON.parse(JSON.stringify(initialMockData)));
-    setActiveZurronId('z-shared');
+    setActiveAccountId('acc-principal');
+    setActiveTab('home');
+    setPreviousTab('home');
+    setIsBalanceHidden(false);
   };
 
   return (
     <EmulatorContext.Provider
       value={{
         data,
-        activeZurron,
-        setActiveZurronId,
-        addExpense,
-        settleDebt,
+        activeAccount,
+        activeAccountId,
+        activeAccountIndex,
+        activeTab,
+        setActiveTab,
+        openSettings,
+        closeSettings,
+        setActiveAccountId,
+        selectNextAccount,
+        selectPrevAccount,
+        isBalanceHidden,
+        toggleBalanceVisibility,
+        addTransaction,
         resetEmulator,
       }}
     >

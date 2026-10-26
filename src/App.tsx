@@ -15,7 +15,7 @@ export const App: React.FC = () => {
     <ThemeProvider>
       <I18nProvider>
         <EmulatorProvider>
-          <div className="min-h-screen flex flex-col bg-[#080b0a] dark:bg-[#080b0a] light:bg-[#f8faf9] text-[#f3f6f4] dark:text-[#f3f6f4] light:text-[#0d1210] transition-colors duration-300">
+          <div className="min-h-screen flex flex-col bg-[#f8fafc] text-slate-900 dark:bg-[#080b0a] dark:text-[#f3f6f4] transition-colors duration-300">
             <Header />
             <main className="flex-1">
               <Hero />

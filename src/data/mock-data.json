@@ -1,142 +1,239 @@
 {
   "currentUser": {
-    "id": "u-1",
-    "name": "Dani",
-    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Dani",
-    "monthlyBudget": 1800
+    "id": "u-pacho",
+    "name": "Pacho",
+    "email": "pacho@pacho.app",
+    "avatar": "/pacho/poses/04_ok.png"
   },
-  "partner": {
-    "id": "u-2",
-    "name": "Elena",
-    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Elena"
+  "couple": {
+    "partnerName": "Elena",
+    "partnerAvatar": "/pacho/poses/13_companero.png",
+    "syncCode": "PCH-749",
+    "linkedAt": "Octubre 2026",
+    "isLinked": true
   },
-  "zurrones": [
+  "accounts": [
     {
-      "id": "z-shared",
-      "name": "Piso & Gastos Comunes",
-      "type": "shared",
+      "id": "acc-principal",
+      "name": "Cuenta Principal",
+      "balance": 3036.77,
+      "currency": "€",
+      "color": "#E13B44",
+      "gradient": "linear-gradient(135deg, rgba(215, 45, 60, 0.95) 0%, rgba(70, 20, 35, 0.85) 45%, rgba(18, 20, 32, 0.98) 100%)",
+      "icon": "landmark",
+      "scope": "personal",
+      "position": 0,
+      "cardIdentifier": "•••• 4291"
+    },
+    {
+      "id": "acc-shared",
+      "name": "Cuenta Compartida",
       "balance": 1840.50,
-      "myShare": 920.25,
-      "partnerShare": 920.25,
       "currency": "€",
-      "color": "emerald",
-      "membersCount": 2
+      "color": "#00DF89",
+      "gradient": "linear-gradient(135deg, rgba(0, 223, 137, 0.95) 0%, rgba(10, 40, 28, 0.85) 45%, rgba(12, 16, 26, 0.98) 100%)",
+      "icon": "wallet",
+      "scope": "shared",
+      "position": 1,
+      "cardIdentifier": "•••• 8821"
     },
     {
-      "id": "z-personal",
-      "name": "Mi Zurrón Personal",
-      "type": "personal",
-      "balance": 2450.00,
-      "myShare": 2450.00,
-      "partnerShare": 0,
-      "currency": "€",
-      "color": "blue",
-      "membersCount": 1
-    },
-    {
-      "id": "z-trips",
-      "name": "Viaje a Asturias 🌲",
-      "type": "goal",
+      "id": "acc-savings",
+      "name": "Ahorro Vacaciones",
       "balance": 620.00,
-      "target": 1000.00,
-      "myShare": 310.00,
-      "partnerShare": 310.00,
       "currency": "€",
-      "color": "gold",
-      "membersCount": 2
+      "color": "#D4AF37",
+      "gradient": "linear-gradient(135deg, rgba(212, 175, 55, 0.95) 0%, rgba(50, 40, 10, 0.85) 45%, rgba(18, 16, 12, 0.98) 100%)",
+      "icon": "piggy-bank",
+      "scope": "shared",
+      "position": 2,
+      "cardIdentifier": "•••• 1055"
     }
   ],
-  "debtSummary": {
-    "debtor": "Elena",
-    "creditor": "Dani",
-    "amount": 42.80,
-    "currency": "€",
-    "reason": "Compra Mercadona (Dani pagó 85.60 € a pachas 50/50)"
+  "safeToSpend": {
+    "dailyAmount": 632.46,
+    "monthlyRemaining": 1264.92,
+    "daysRemaining": 20,
+    "status": "healthy",
+    "subtitle": "632,46 € disponibles sin estrés",
+    "badge": "Al día ✓"
   },
   "categories": [
-    { "id": "cat-super", "name": "Supermercado", "icon": "ShoppingCart", "color": "#10b981" },
-    { "id": "cat-home", "name": "Alquiler y Piso", "icon": "Home", "color": "#3b82f6" },
-    { "id": "cat-dine", "name": "Cenas y Ocio", "icon": "Utensils", "color": "#f59e0b" },
-    { "id": "cat-bills", "name": "Luz, Internet y Agua", "icon": "Zap", "color": "#8b5cf6" },
-    { "id": "cat-trips", "name": "Transporte y Viajes", "icon": "Car", "color": "#ec4899" }
+    {
+      "id": "cat-super",
+      "name": "Supermercado",
+      "icon": "ShoppingCart",
+      "color": "#10b981"
+    },
+    {
+      "id": "cat-home",
+      "name": "Hogar y Alquiler",
+      "icon": "Home",
+      "color": "#6366f1"
+    },
+    {
+      "id": "cat-dine",
+      "name": "Restaurantes y Ocio",
+      "icon": "Utensils",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "cat-transport",
+      "name": "Transporte y Gasolina",
+      "icon": "Car",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "cat-subs",
+      "name": "Suscripciones",
+      "icon": "Smartphone",
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "cat-bills",
+      "name": "Luz y Fibra",
+      "icon": "Zap",
+      "color": "#ec4899"
+    },
+    {
+      "id": "cat-income",
+      "name": "Nómina e Ingresos",
+      "icon": "Banknote",
+      "color": "#00df89"
+    }
   ],
   "transactions": [
     {
       "id": "tx-1",
-      "zurronId": "z-shared",
-      "title": "Mercadona Semanal",
+      "accountId": "acc-principal",
+      "title": "Compra Mercadona",
+      "amount": -64.20,
+      "type": "expense",
       "category": "cat-super",
-      "amount": 85.60,
-      "paidBy": "Dani",
-      "split": "50/50",
-      "myPart": 42.80,
-      "date": "Hoy, 14:30",
-      "type": "expense"
+      "date": "26 oct",
+      "dayGroup": "Lunes, 26 de octubre",
+      "paidBy": "Pacho",
+      "scope": "shared",
+      "isRecurring": false
     },
     {
       "id": "tx-2",
-      "zurronId": "z-shared",
-      "title": "Fibra & WiFi 600Mb",
-      "category": "cat-bills",
-      "amount": 34.90,
+      "accountId": "acc-principal",
+      "title": "Cena La Dehesa",
+      "amount": -38.50,
+      "type": "expense",
+      "category": "cat-dine",
+      "date": "25 oct",
+      "dayGroup": "Domingo, 25 de octubre",
       "paidBy": "Elena",
-      "split": "50/50",
-      "myPart": 17.45,
-      "date": "Ayer",
-      "type": "expense"
+      "scope": "shared",
+      "isRecurring": false
     },
     {
       "id": "tx-3",
-      "zurronId": "z-shared",
-      "title": "Cena Italiana Romántica",
-      "category": "cat-dine",
-      "amount": 48.00,
-      "paidBy": "Dani",
-      "split": "50/50",
-      "myPart": 24.00,
-      "date": "Viernes",
-      "type": "expense"
+      "accountId": "acc-principal",
+      "title": "Gasolina Repsol",
+      "amount": -45.00,
+      "type": "expense",
+      "category": "cat-transport",
+      "date": "24 oct",
+      "dayGroup": "Sábado, 24 de octubre",
+      "paidBy": "Pacho",
+      "scope": "personal",
+      "isRecurring": false
     },
     {
       "id": "tx-4",
-      "zurronId": "z-personal",
-      "title": "Abono Gimnasio",
-      "category": "cat-bills",
-      "amount": 29.99,
-      "paidBy": "Dani",
-      "split": "100% Personal",
-      "myPart": 29.99,
-      "date": "22 Oct",
-      "type": "expense"
+      "accountId": "acc-principal",
+      "title": "Spotify Duo",
+      "amount": -14.99,
+      "type": "expense",
+      "category": "cat-subs",
+      "date": "22 oct",
+      "dayGroup": "Jueves, 22 de octubre",
+      "paidBy": "Pacho",
+      "scope": "personal",
+      "isRecurring": true
     },
     {
       "id": "tx-5",
-      "zurronId": "z-trips",
-      "title": "Aporte Meta Asturias",
-      "category": "cat-trips",
-      "amount": 100.00,
-      "paidBy": "Dani",
-      "split": "Ahorro conjunto",
-      "myPart": 50.00,
-      "date": "20 Oct",
-      "type": "income"
+      "accountId": "acc-principal",
+      "title": "Transferencia recibida",
+      "amount": 150.00,
+      "type": "income",
+      "category": "cat-income",
+      "date": "21 oct",
+      "dayGroup": "Miércoles, 21 de octubre",
+      "paidBy": "Pacho",
+      "scope": "personal",
+      "isRecurring": false
+    },
+    {
+      "id": "tx-6",
+      "accountId": "acc-principal",
+      "title": "Fibra 1Gb & Móvil",
+      "amount": -34.90,
+      "type": "expense",
+      "category": "cat-bills",
+      "date": "19 oct",
+      "dayGroup": "Lunes, 19 de octubre",
+      "paidBy": "Pacho",
+      "scope": "shared",
+      "isRecurring": true
     }
   ],
-  "pachoTips": [
+  "upcomingPayments": [
     {
-      "id": "tip-1",
-      "pose": "guia",
-      "quote": "¡Bien llevado! En el zurrón compartido van 85,60 € de súper repartidos a la mitad sin discusión."
+      "id": "up-1",
+      "accountId": "acc-principal",
+      "title": "Alquiler Piso",
+      "amount": -450.00,
+      "dueDate": "01 nov",
+      "periodicity": "Mensual",
+      "icon": "home"
     },
     {
-      "id": "tip-2",
-      "pose": "celebracion",
-      "quote": "¡Elena te debe 42,80 €! Con un toque en Pacho te salda la cuenta al instante con Bizum."
+      "id": "up-2",
+      "accountId": "acc-principal",
+      "title": "Fibra 1Gb & Móvil",
+      "amount": -34.90,
+      "dueDate": "05 nov",
+      "periodicity": "Mensual",
+      "icon": "zap"
     },
     {
-      "id": "tip-3",
-      "pose": "ahorro",
-      "quote": "¡Ojo al dato! Ya lleváis el 62% del viaje a Asturias ahorrado en el zurrón de metas."
+      "id": "up-3",
+      "accountId": "acc-principal",
+      "title": "Seguro Coche",
+      "amount": -115.00,
+      "dueDate": "15 nov",
+      "periodicity": "Trimestral",
+      "icon": "car"
     }
-  ]
+  ],
+  "goals": [
+    {
+      "id": "g-1",
+      "title": "Vacaciones Dehesa",
+      "currentAmount": 350,
+      "targetAmount": 800,
+      "startDate": "01 oct",
+      "endDate": "30 nov 2026",
+      "tag": "Viajes",
+      "scope": "shared"
+    }
+  ],
+  "analytics": {
+    "year": "2026",
+    "netBalance": -47.59,
+    "totalIncome": 150.00,
+    "totalExpense": 197.59,
+    "categories": [
+      { "name": "Supermercado", "amount": 64.20, "count": 1, "color": "#10b981" },
+      { "name": "Transporte", "amount": 45.00, "count": 1, "color": "#3b82f6" },
+      { "name": "Restaurantes", "amount": 38.50, "count": 1, "color": "#f59e0b" },
+      { "name": "Fibra & Suministros", "amount": 34.90, "count": 1, "color": "#ec4899" },
+      { "name": "Suscripciones", "amount": 14.99, "count": 1, "color": "#8b5cf6" }
+    ]
+  }
 }

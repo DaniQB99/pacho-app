@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /auth
+Disallow: /settings
+Disallow: /api/
+
+Sitemap: https://pacho-app.vercel.app/sitemap.xml

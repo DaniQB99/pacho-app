@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+html.dark {
   --bg-primary: #080b0a;
   --bg-surface: #111614;
   --bg-card: #161c1a;
@@ -13,14 +14,16 @@
   --color-gold: #d4af37;
 }
 
-html.light {
-  --bg-primary: #f8faf9;
+html.light,
+html:not(.dark),
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
   --bg-surface: #ffffff;
-  --bg-card: #f0f4f2;
-  --border-color: #e2e8e5;
-  --text-primary: #0d1210;
-  --text-secondary: #4b5563;
-  --color-green: #059669;
+  --bg-card: #ffffff;
+  --border-color: rgba(15, 23, 42, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --color-green: #00A865;
   --color-gold: #b45309;
 }
 
@@ -40,9 +43,14 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-html.light .liquid-glass {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(240, 245, 242, 0.65) 100%);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+html.light .liquid-glass,
+html:not(.dark) .liquid-glass,
+[data-theme="light"] .liquid-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
 }
 
 .pacho-card {
@@ -51,14 +59,27 @@ html.light .liquid-glass {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-html.light .pacho-card {
+html.light .pacho-card,
+html:not(.dark) .pacho-card,
+[data-theme="light"] .pacho-card {
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
 }
 
 .pacho-card:hover {
   border-color: rgba(0, 223, 137, 0.4);
   box-shadow: 0 14px 40px -10px rgba(0, 223, 137, 0.15);
   transform: translateY(-2px);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
